@@ -2,6 +2,8 @@
 import React, { Fragment } from "react";
 import './App.css';
 
+import InputUrl from "./components/InputUrl";
+import ListUrls from "./components/ListUrls";
 import InputTodo from './components/InputTodo';
 import ListTodos from './components/ListTodos';
 
@@ -9,6 +11,8 @@ function App() {
   return (
     <Fragment>
       <div className="container">
+        <InputUrl />
+        <ListUrls />
         <InputTodo />
         <ListTodos />
       </div>

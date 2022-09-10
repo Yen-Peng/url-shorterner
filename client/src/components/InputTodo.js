@@ -21,10 +21,12 @@ const InputTodo = () => {
   return (
     <Fragment>
       <h1 className="text-center mt-5">Pern Todo List</h1>
-      <form className="d-flex mt-5" onSubmit={onSubmitForm}>
+      <form className="form-inline mt-5" onSubmit={onSubmitForm}>
         <input
+          required
           type="text"
-          className="form-control"
+          placeholder="Enter a todo"
+          className="form-control mr-2 col"
           value={description}
           onChange={e => setDescription(e.target.value)}
         />

@@ -1,6 +1,48 @@
+body {
+  background: linear-gradient(rgba(79, 196, 250, 0.5), transparent);
+  /* background:linear-gradient(rgba(16, 51, 250, 0.5),transparent); */
+  background-color: mistyrose;
+}
 
-.noData {
-  font-size: 1rem;
+th {
+  color: white;
+  background: linear-gradient(rgba(124, 216, 253, 0.541), transparent);
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #ddd6f3 0%,
+    #faaca8 51%,
+    #ddd6f3 100%
+  );
+  /* margin: 10px; */
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  font-weight: bold;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.title {
+  color: white;
+}
+
+.bold-title {
+  color: white;
+  font-weight: 900;
+  font-size: 4rem;
 }
 
 .App {

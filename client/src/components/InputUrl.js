@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { toast } from "react-toastify";
+import Button from "@mui/material/Button";
 
 const InputUrl = () => {
   const [longurl, setLongurl] = useState("");
@@ -43,10 +44,10 @@ const InputUrl = () => {
 
   return (
     <Fragment>
-      <h1 className="text-center mt-5">
-        <b>URL</b> Shortener
+      <h1 className="title text-center pt-5">
+        <b className="bold-title">URL</b> Shortener
       </h1>
-      <form className="form-inline mt-5" onSubmit={onSubmitForm}>
+      <form className="inputurl form-inline py-5" onSubmit={onSubmitForm}>
         <label htmlFor="fullUrl" className="sr-only">
           Url
         </label>
@@ -57,9 +58,11 @@ const InputUrl = () => {
           placeholder="Paste your URL here"
           className="form-control mr-2 col"
           value={longurl}
-          onChange={e => setLongurl(e.target.value)}
+          onChange={(e) => setLongurl(e.target.value)}
         />
-        <button className="btn btn-success">Shorten</button>
+        <button className="btn btn-sm btn-grad">
+          Shorten
+        </button>
       </form>
     </Fragment>
   );

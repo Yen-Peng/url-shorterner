@@ -1,6 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
+import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
+import IconButton from "@mui/material/IconButton";
 
 const ListUrls = () => {
   const [urls, setUrls] = useState([]);
@@ -32,15 +34,15 @@ const ListUrls = () => {
 
   return (
     <Fragment>
-      <table className="table table-striped table-responsive my-5 text-left">
-        <thead>
+      <table className="table table-striped table-responsive py-3 text-center">
+        <thead className="text-left">
           <tr>
             <th>Original URL</th>
             <th>Short URL</th>
             <th>Copy</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-left">
           {urls.map((url) => (
             <tr key={url.url_id}>
               <td>{url.longurl}</td>
@@ -50,9 +52,9 @@ const ListUrls = () => {
                   text={url.shorturl}
                   onCopy={() => setCopied(true)}
                 >
-                  <button type="button" className="btn btn-info btn-sm">
-                    Copy
-                  </button>
+                  <IconButton color="secondary" aria-label="copy to clipboard">
+                    <ContentCopyRoundedIcon />
+                  </IconButton>
                 </CopyToClipboard>
               </td>
             </tr>

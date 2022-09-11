@@ -9,7 +9,7 @@ const ListUrls = () => {
 
   const getUrls = async () => {
     try {
-      const response = await fetch("http://localhost:5000/urls");
+      const response = await fetch("http://localhost:5000/api/urls");
       const jsonData = await response.json();
 
       setUrls(jsonData);
@@ -20,7 +20,7 @@ const ListUrls = () => {
 
   const deleteUrl = async id => {
     try {
-      const deleteUrl = await fetch(`http://localhost:5000/urls/${id}`, {
+      const deleteUrl = await fetch(`http://api/urls/${id}`, {
         method: "DELETE",
       });
       setUrls(urls.filter(url => url.url_id !== id));

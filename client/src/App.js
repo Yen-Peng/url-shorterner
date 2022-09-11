@@ -6,12 +6,14 @@ import InputUrl from "./components/InputUrl";
 import ListUrls from "./components/ListUrls";
 import InputTodo from './components/InputTodo';
 import ListTodos from './components/ListTodos';
+import UrlResult from './components/UrlResult';
 
 function App() {
   return (
     <Fragment>
       <div className="container">
         <InputUrl />
+        <UrlResult />
         <ListUrls />
         <InputTodo />
         <ListTodos />

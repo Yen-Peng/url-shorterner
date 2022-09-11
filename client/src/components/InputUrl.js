@@ -7,7 +7,7 @@ const InputUrl = () => {
     e.preventDefault();
     try {
       const body = { longurl };
-      const response = await fetch("http://localhost:5000/shorten", {
+      const response = await fetch("http://localhost:5000/api/shorten", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

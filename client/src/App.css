@@ -1,3 +1,8 @@
+.result button.copied {
+  background: pink;
+  color: var(--primary-color);
+}
+
 .App {
   text-align: center;
 }

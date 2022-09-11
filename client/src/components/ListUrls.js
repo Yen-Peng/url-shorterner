@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { toast } from "react-toastify";
 
 const ListUrls = () => {
   const [urls, setUrls] = useState([]);
@@ -17,17 +18,15 @@ const ListUrls = () => {
       setUrls(jsonData);
     } catch (err) {
       console.error(err.message);
-    }
-  };
-
-  const deleteUrl = async id => {
-    try {
-      const deleteUrl = await fetch(`http://api/urls/${id}`, {
-        method: "DELETE",
+      toast.error("Unable to submit URL", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: 0,
       });
-      setUrls(urls.filter(url => url.url_id !== id));
-    } catch (err) {
-      console.error(err.message);
     }
   };
 
@@ -36,8 +35,8 @@ const ListUrls = () => {
       <table className="table table-striped table-responsive my-5 text-left">
         <thead>
           <tr>
-            <th>Description</th>
-            <th>Edit</th>
+            <th>Original URL</th>
+            <th>Short URL</th>
             <th>Copy</th>
           </tr>
         </thead>

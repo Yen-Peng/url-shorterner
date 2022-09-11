@@ -1,20 +1,43 @@
 import React, { Fragment, useState } from "react";
+import { toast } from "react-toastify";
 
 const InputUrl = () => {
   const [longurl, setLongurl] = useState("");
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
-    try {
-      const body = { longurl };
-      const response = await fetch("http://localhost:5000/api/shorten", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
+    if (longurl.startsWith("http://localhost:5000")) {
+      toast.info("URL is already shortened", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: 0,
       });
-      window.location = "/";
-    } catch (err) {
-      console.error(err.message);
+      setLongurl("");
+    } else {
+      try {
+        const body = { longurl };
+        const response = await fetch("http://localhost:5000/api/shorten", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        window.location = "/";
+      } catch (err) {
+        console.error(err.message);
+        toast.error("Unable to submit URL", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 0,
+        });
+      }
     }
   };
 

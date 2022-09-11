@@ -1,6 +1,6 @@
-.result button.copied {
-  background: pink;
-  color: var(--primary-color);
+
+.noData {
+  font-size: 1rem;
 }
 
 .App {

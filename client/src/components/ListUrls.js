@@ -1,7 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const ListUrls = () => {
   const [urls, setUrls] = useState([]);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     getUrls();
@@ -31,26 +33,28 @@ const ListUrls = () => {
 
   return (
     <Fragment>
-      <table className="table table-striped table-responsive mt-5 text-left">
+      <table className="table table-striped table-responsive my-5 text-left">
         <thead>
           <tr>
             <th>Description</th>
             <th>Edit</th>
-            <th>Delete</th>
+            <th>Copy</th>
           </tr>
         </thead>
         <tbody>
-          {urls.map(url => (
+          {urls.map((url) => (
             <tr key={url.url_id}>
               <td>{url.longurl}</td>
               <td>{url.shorturl}</td>
               <td>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => deleteUrl(url.url_id)}
+                <CopyToClipboard
+                  text={url.shorturl}
+                  onCopy={() => setCopied(true)}
                 >
-                  Delete
-                </button>
+                  <button type="button" className="btn btn-info btn-sm">
+                    Copy
+                  </button>
+                </CopyToClipboard>
               </td>
             </tr>
           ))}

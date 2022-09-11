@@ -20,7 +20,9 @@ const InputUrl = () => {
 
   return (
     <Fragment>
-      <h1 className="text-center mt-5">Url Shortener</h1>
+      <h1 className="text-center mt-5">
+        <b>URL</b> Shortener
+      </h1>
       <form className="form-inline mt-5" onSubmit={onSubmitForm}>
         <label htmlFor="fullUrl" className="sr-only">
           Url

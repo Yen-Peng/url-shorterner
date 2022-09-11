@@ -60,7 +60,7 @@ router.get("/urls", async (req, res) => {
 });
 
 // @route DELETE /api/urls/:id
-// desc   Redirect to long/original URL
+// desc   Delete a url
 router.delete("/urls/:id", async (req, res) => {
   try {
     const { id } = req.params;

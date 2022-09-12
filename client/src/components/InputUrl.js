@@ -20,13 +20,13 @@ const InputUrl = () => {
     } else {
       try {
         const baseurl = window.location.origin;
-        const body = { longurl, baseurl };
+        const body = { longurl };
         const response = await fetch("/api/shorten", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
         });
-        window.location = "/";
+        // window.location = "/";
       } catch (err) {
         console.error(err.message);
         toast.error("Unable to submit URL", {

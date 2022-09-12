@@ -9,7 +9,7 @@ const pool = require("../db");
 // desc   Create short URL
 router.post("/shorten", async (req, res) => {
   const { longurl } = req.body;
-  const baseUrl = config.get("baseUrl");
+  const baseUrl = window.location.origin;
 
   // Check base url
   if (!isUrl(baseUrl)) {

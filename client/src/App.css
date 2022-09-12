@@ -9,6 +9,14 @@ th {
   background: linear-gradient(rgba(124, 216, 253, 0.541), transparent);
 }
 
+table > tbody > tr > td {
+  text-align: center;
+}
+
+table > tbody > tr > td {
+  text-align: left;
+}
+
 .btn-grad {
   background-image: linear-gradient(
     to right,

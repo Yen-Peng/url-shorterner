@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
 import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
@@ -6,7 +6,6 @@ import IconButton from "@mui/material/IconButton";
 
 const ListUrls = () => {
   const [urls, setUrls] = useState([]);
-  const [copied, setCopied] = useState(false);
 
   const getUrls = async () => {
     try {
@@ -46,7 +45,6 @@ const ListUrls = () => {
               <td>
                 <CopyToClipboard
                   text={url.shorturl}
-                  onCopy={() => setCopied(true)}
                 >
                   <IconButton color="secondary" aria-label="copy to clipboard">
                     <ContentCopyRoundedIcon />

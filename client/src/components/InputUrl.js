@@ -3,13 +3,13 @@ import { toast } from "react-toastify";
 
 const InputUrl = () => {
   const [longurl, setLongurl] = useState("");
-  const [domain, setDomain] = useState("");
+    const [domain, setDomain] = useState(
+      "https://pern-url-shortener.herokuapp.com/api"
+    );
 
   useEffect(() => {
     if (process.env.NODE_ENV !== "production") {
       setDomain("http://localhost:5000/api");
-    } else {
-      setDomain("https://pern-url-shortener.herokuapp.com/api");
     }
   }, []);
 

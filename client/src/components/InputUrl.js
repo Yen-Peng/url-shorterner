@@ -19,7 +19,6 @@ const InputUrl = () => {
       setLongurl("");
     } else {
       try {
-        const baseurl = window.location.origin;
         const body = { longurl };
         const response = await fetch("/api/shorten", {
           method: "POST",
@@ -47,7 +46,7 @@ const InputUrl = () => {
       <h1 className="title text-center pt-5">
         <b className="bold-title">URL</b> Shortener
       </h1>
-      <form className="inputurl form-inline py-5" onSubmit={onSubmitForm}>
+      <form className="form-inline py-5" onSubmit={onSubmitForm}>
         <label htmlFor="fullUrl" className="sr-only">
           Url
         </label>

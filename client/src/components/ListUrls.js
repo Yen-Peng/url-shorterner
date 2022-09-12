@@ -7,18 +7,10 @@ import IconButton from "@mui/material/IconButton";
 const ListUrls = () => {
   const [urls, setUrls] = useState([]);
   const [copied, setCopied] = useState(false);
-  const [domain, setDomain] = useState("https://pern-url-shortener.herokuapp.com/api");
-  
-  useEffect(() => {
-    getUrls();
-    if (process.env.NODE_ENV !== "production") {
-      setDomain("http://localhost:5000/api");
-    }
-  }, []);
 
   const getUrls = async () => {
     try {
-      const response = await fetch(domain+"/urls");
+      const response = await fetch("/api/urls");
       const jsonData = await response.json();
 
       setUrls(jsonData);

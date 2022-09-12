@@ -3,19 +3,10 @@ import { toast } from "react-toastify";
 
 const InputUrl = () => {
   const [longurl, setLongurl] = useState("");
-    const [domain, setDomain] = useState(
-      "https://pern-url-shortener.herokuapp.com/api"
-    );
-
-  useEffect(() => {
-    if (process.env.NODE_ENV !== "production") {
-      setDomain("http://localhost:5000/api");
-    }
-  }, []);
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
-    if (longurl.startsWith(domain)) {
+    if (longurl.startsWith(window.location.origin)) {
       toast.info("URL is already shortened", {
         position: "top-right",
         autoClose: 2000,
@@ -29,7 +20,7 @@ const InputUrl = () => {
     } else {
       try {
         const body = { longurl };
-        const response = await fetch(`${domain}/shorten`, {
+        const response = await fetch("/api/shorten", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),

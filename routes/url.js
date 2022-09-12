@@ -8,11 +8,10 @@ const pool = require("../db");
 // @route POST /api/shorten
 // desc   Create short URL
 router.post("/shorten", async (req, res) => {
-  const { longurl } = req.body;
-  const baseUrl = window.location.origin;
+  const { longurl, baseurl } = req.body;
 
   // Check base url
-  if (!isUrl(baseUrl)) {
+  if (!isUrl(baseurl)) {
     return res.status(401).json("Base url is invalid");
   }
 
@@ -29,7 +28,7 @@ router.post("/shorten", async (req, res) => {
       if (url.rows[0]) {
         res.json(url.rows[0]);
       } else {
-        const shorturl = baseUrl + "/" + urlcode;
+        const shorturl = baseurl + "/" + urlcode;
 
         // Insert into database
         const newUrl = await pool.query(

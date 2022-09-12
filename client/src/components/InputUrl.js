@@ -19,7 +19,8 @@ const InputUrl = () => {
       setLongurl("");
     } else {
       try {
-        const body = { longurl };
+        const baseurl = window.location.origin;
+        const body = { longurl, baseurl };
         const response = await fetch("/api/shorten", {
           method: "POST",
           headers: { "Content-Type": "application/json" },

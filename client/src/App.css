@@ -1,7 +1,8 @@
-body {
+html, body {
   background: linear-gradient(rgba(79, 196, 250, 0.5), transparent);
   /* background:linear-gradient(rgba(16, 51, 250, 0.5),transparent); */
   background-color: mistyrose;
+  height: 100%;
 }
 
 th {

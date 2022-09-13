@@ -1,10 +1,8 @@
 <div id="top"></div>
 
-## URL Shortener
+## Weely - A URL Shortener
 
-[![Product Name Screen Shot][product-screenshot]](https://pern-url-shortener.herokuapp.com/)
-
-This is a simple url shortener web app created using the PERN stack. The deployed web link is [https://pern-url-shortener.herokuapp.com/](https://pern-url-shortener.herokuapp.com/).
+This is a simple url shortener web app created using the PERN stack. The deployed web link is [https://weely.herokuapp.com](https://weely.herokuapp.com).
 
 ### Built With
 

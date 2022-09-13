@@ -44,24 +44,33 @@ const InputUrl = () => {
   return (
     <Fragment>
       <h1 className="title text-center pt-5">
-        <b className="bold-title">URL</b> Shortener
+        <b className="bold-title">Weely</b>
+        <h4 className="mt-2">shortens your URL</h4>
       </h1>
-      <form className="form-inline py-5" onSubmit={onSubmitForm}>
-        <label htmlFor="fullUrl" className="sr-only">
-          Url
-        </label>
-        <input
-          required
-          type="text"
-          name="fullUrl"
-          placeholder="Paste your URL here"
-          className="form-control mr-2 col"
-          value={longurl}
-          onChange={(e) => setLongurl(e.target.value)}
-        />
-        <button className="btn btn-sm btn-grad">
-          Shorten
-        </button>
+      <form className="py-5" onSubmit={onSubmitForm}>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-sm-10">
+              <label htmlFor="fullUrl" className="sr-only">
+                Url
+              </label>
+              <input
+                required
+                type="text"
+                name="fullUrl"
+                placeholder="Paste your URL here"
+                className="form-control mb-2 mr-2 col"
+                value={longurl}
+                onChange={(e) => setLongurl(e.target.value)}
+              />
+            </div>
+            <div className="col-sm-2">
+              <div className="end">
+                <button className="btn btn-sm btn-grad">Shorten</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     </Fragment>
   );

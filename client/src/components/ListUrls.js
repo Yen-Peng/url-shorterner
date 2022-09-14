@@ -27,6 +27,17 @@ const ListUrls = () => {
     }
   };
 
+  const deleteUrls = async () => {
+    console.log("delete");
+    try {
+      const deleteUrls = await fetch(`/api/urls`, {
+        method: "DELETE",
+      });
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   useEffect(() => {
     getUrls();
   }, []);
@@ -61,6 +72,13 @@ const ListUrls = () => {
             ))}
           </tbody>
         </table>
+        {urls.length > 0 && (
+          <div className="row justify-content-center">
+            <button className="btn btn-sm btn-grad" onClick={deleteUrls}>
+              Clear Table
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

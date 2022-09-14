@@ -65,7 +65,7 @@ const InputUrl = () => {
               />
             </div>
             <div className="col-sm-2">
-              <div className="end">
+              <div className="row justify-content-center">
                 <button className="btn btn-sm btn-grad">Shorten</button>
               </div>
             </div>
